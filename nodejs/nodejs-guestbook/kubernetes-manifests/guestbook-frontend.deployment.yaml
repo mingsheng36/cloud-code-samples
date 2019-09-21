@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: node-guestbook-frontend
@@ -7,10 +7,6 @@ metadata:
     tier: frontend
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: node-guestbook
-      tier: frontend
   template:
     metadata:
       labels:
@@ -23,8 +19,12 @@ spec:
         ports:
         - name: http-server
           containerPort: 8080
+        - name: debug
+          containerPort: 9229 
         env:
         - name: PORT
           value: "8080"
         - name: GUESTBOOK_API_ADDR
           value: node-guestbook-backend:8080
+        - name: TRANSLATE_API_ADDR
+          value: "35.221.150.225"

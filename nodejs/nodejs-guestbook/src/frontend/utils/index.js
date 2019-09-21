@@ -3,7 +3,9 @@ const moment = require('moment')
 
 const timeAgo = (utcTime, currTime) => {
     const past = moment(utcTime)
+    console.log("past: " + past)
     const result = past.from(moment(currTime))
+    console.log("result: " + result)
     return result
 }
 

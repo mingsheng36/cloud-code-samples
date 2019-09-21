@@ -4,7 +4,7 @@ metadata:
   labels:
     app: node-guestbook
     tier: db
-  name: node-guestbook-mongodb
+  name: mongo-service
 spec:
   ports:
     - port: 27017
