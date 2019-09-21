@@ -68,7 +68,7 @@ router.get("/", (req, res) => {
                 body: e.body,
                 timestamp: e.timestamp,
                 english: t.english,
-                german: t.german
+                german: t.english
               })
             }
             const result = util.formatMessages(messages)
